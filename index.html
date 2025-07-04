@@ -1,0 +1,1997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+.lightbox {
+  display: none; 
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+  text-align: center;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80vh;
+  margin: auto;
+  display: block;
+  border-radius: 5px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.lightbox-controls button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  margin: 0 20px;
+  user-select: none;
+}
+
+.lightbox-controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+</style>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villa Vasiliki - Traditional Mani House with Sea View | Greece</title>
+    <meta name="description" content="Experience authentic Greek hospitality in our traditional stone villa, perfectly located in the historic Mani peninsula with stunning sea views. Book your unforgettable Greek getaway today.">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Villa Vasiliki - Traditional Mani House with Sea View | Greece">
+    <meta property="og:description" content="Experience authentic Greek hospitality in our traditional stone villa in Mani peninsula with stunning sea views.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <style>
+        :root {
+            --aegean: hsl(204, 62%, 42%);
+            --mediterranean: hsl(321, 45%, 39%);
+            --santorini: hsl(0, 0%, 98%);
+            --cream: hsl(47, 57%, 96%);
+            --olive: hsl(120, 25%, 56%);
+            --terracotta: hsl(29, 48%, 54%);
+            --warm-gray: hsl(0, 0%, 40%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .text-aegean { color: var(--aegean); }
+        .bg-aegean { background-color: var(--aegean); }
+        .text-mediterranean { color: var(--mediterranean); }
+        .bg-mediterranean { background-color: var(--mediterranean); }
+        .text-cream { color: var(--cream); }
+        .bg-cream { background-color: var(--cream); }
+        .text-olive { color: var(--olive); }
+        .bg-olive { background-color: var(--olive); }
+        .text-terracotta { color: var(--terracotta); }
+        .bg-terracotta { background-color: var(--terracotta); }
+        .text-warm-gray { color: var(--warm-gray); }
+        .text-santorini { color: var(--santorini); }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+        .stagger-6 { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Navigation */
+        .navigation {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 4rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--aegean);
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            color: white;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--aegean);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #2563eb;
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--aegean);
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            text-align: center;
+            color: var(--warm-gray);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 1rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .feature-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .feature-content p {
+            color: var(--warm-gray);
+            line-height: 1.6;
+        }
+
+        /* Amenities Section */
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .amenity-card {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .amenity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .amenity-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .amenity-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .amenity-list {
+            list-style: none;
+            text-align: left;
+        }
+
+        .amenity-list li {
+            padding: 0.5rem 0;
+            color: var(--warm-gray);
+            display: flex;
+            align-items: center;
+        }
+
+        .amenity-list li i {
+            color: var(--olive);
+            margin-right: 0.5rem;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            background: var(--aegean);
+            color: white;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 1rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .review-stars {
+            color: #ffd700;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .review-text {
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--olive);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            padding: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        .booking-platforms {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .platform-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .platform-link:hover {
+            border-color: var(--aegean);
+            transform: translateY(-2px);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--aegean);
+            box-shadow: 0 0 0 3px rgba(70, 144, 226, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .required {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        /* Status and Message Styles */
+        .status-indicator {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            z-index: 10;
+        }
+
+        .status-loading {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+
+        .status-ready {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .status-success {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .message-alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .message-alert.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .message-alert.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .loading-spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid transparent;
+            border-top: 2px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .submit-btn:disabled .btn-text {
+            opacity: 0.7;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--aegean);
+        }
+
+        .footer-brand p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--aegean);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--mediterranean);
+            transform: translateY(-3px);
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--aegean);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--aegean);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+
+        /* Floating Contact Button */
+        .floating-contact {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+        }
+
+        .floating-contact a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: var(--aegean);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .floating-contact a:hover {
+            background: var(--mediterranean);
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        /* Loading Overlay */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 10000;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-spinner-big {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--aegean);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 8px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-prev,
+        .lightbox-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-prev {
+            left: -60px;
+        }
+
+        .lightbox-next {
+            right: -60px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .amenities-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .status-indicator {
+                position: static;
+                margin-bottom: 15px;
+                display: inline-block;
+            }
+            
+            .booking-platforms {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .floating-contact {
+                bottom: 1rem;
+                right: 1rem;
+            }
+            
+            .floating-contact a {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Loading Overlay -->
+<div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-spinner-big"></div>
+    <p>Loading Villa Vasiliki...</p>
+</div>
+
+<!-- Navigation -->
+<nav class="navigation glass-effect">
+    <div class="nav-container">
+        <h1 class="font-playfair text-aegean" style="font-size: 1.8rem; font-weight: 700;">Villa Vasiliki</h1>
+        <ul class="nav-links">
+            <li><a href="#home" onclick="scrollToSection('home')">Home</a></li>
+            <li><a href="#about" onclick="scrollToSection('about')">About</a></li>
+            <li><a href="#amenities" onclick="scrollToSection('amenities')">Amenities</a></li>
+            <li><a href="#gallery" onclick="scrollToSection('gallery')">Gallery</a></li>
+            <li><a href="#reviews" onclick="scrollToSection('reviews')">Reviews</a></li>
+            <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
+        </ul>
+        <button class="mobile-menu" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</nav>
+
+   <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-slideshow">
+            <img src="https://i.imgur.com/vWzRjRX.jpeg" alt="Villa Vasiliki" class="hero-slide active">
+            <img src="https://i.imgur.com/G5I5hJf.jpeg" alt="Villa Vasiliki" class="hero-slide">
+            <img src="https://i.imgur.com/pzbKZqM.jpeg" alt="Villa Vasiliki" class="hero-slide">
+            <img src="https://i.imgur.com/hLGSxPB.jpeg" alt="Villa Vasiliki" class="hero-slide">
+            <img src="https://i.imgur.com/d3uWwb6.jpeg" alt="Villa Vasiliki" class="hero-slide">
+            <img src="https://i.imgur.com/P9u0Co2.jpeg" alt="Villa Vasiliki" class="hero-slide">
+            <img src="https://i.imgur.com/NCbFc4U.jpeg" alt="Villa Vasiliki" class="hero-slide">
+            <img src="https://i.imgur.com/ouwFfrL.jpeg" alt="Villa Vasiliki" class="hero-slide">
+            <img src="https://i.imgur.com/23PUx0R.jpeg" alt="Villa Vasiliki" class="hero-slide">
+            <img src="https://i.imgur.com/mYR7oje.jpeg" alt="Villa Vasiliki" class="hero-slide">
+
+
+          </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title font-playfair fade-in-up">Villa Vasiliki</h1>
+            <p class="hero-subtitle fade-in-up stagger-1">Traditional House in Mani with Sea View</p>
+            <p class="hero-description fade-in-up stagger-2">
+                Experience authentic Greek living in our beautiful stone villa overlooking the crystal-clear waters of the sea
+            </p>
+            <div class="hero-buttons fade-in-up stagger-3">
+                <a href="#contact" class="btn btn-primary" onclick="scrollToSection('contact')">Book Now</a>
+                <a href="#gallery" class="btn btn-secondary" onclick="scrollToSection('gallery')">Virtual Tour</a>
+            </div>
+        </div>
+    </section>
+
+<!-- About Section -->
+<section id="about" class="section bg-cream">
+  <div class="container">
+    <h2 class="section-title font-playfair fade-in-up">Discover Authentic Mani</h2>
+    <p class="section-description fade-in-up stagger-1">
+      Villa Vasiliki is a traditional stone house located in the scenic Mani region, offering an authentic and peaceful stay for travelers seeking relaxation close to nature.
+    </p>
+
+    <div class="about-grid" style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap;">
+      <div class="fade-in-up stagger-2" style="flex: 1 1 300px;">
+<img 
+  src="https://i.imgur.com/7guBggz.jpeg" 
+  alt="Villa Vasiliki Exterior" 
+  style="width: 100%; height: auto; display: block; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"
+  onerror="this.onerror=null;this.src='https://via.placeholder.com/600x400?text=Image+Not+Found';"
+/>
+      </div>
+
+      <div class="fade-in-up stagger-3" style="flex: 2 1 400px;">
+        <div class="feature-item" style="margin-bottom: 20px;">
+          <div class="feature-icon bg-aegean" style="font-size: 2rem; margin-bottom: 8px;">
+            <i class="fas fa-home"></i>
+          </div>
+          <div class="feature-content">
+            <h3 class="font-playfair">Traditional Architecture</h3>
+            <p>Built with authentic Mani stone construction, featuring thick walls that keep the house cool in summer and warm in winter.</p>
+          </div>
+        </div>
+
+        <div class="feature-item" style="margin-bottom: 20px;">
+          <div class="feature-icon bg-mediterranean" style="font-size: 2rem; margin-bottom: 8px;">
+            <i class="fas fa-water"></i>
+          </div>
+          <div class="feature-content">
+            <h3 class="font-playfair">Stunning Sea Views</h3>
+            <p>Two spacious balconies offer breathtaking views of the sea, perfect for morning coffee or evening sunsets.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon bg-olive" style="font-size: 2rem; margin-bottom: 8px;">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <div class="feature-content">
+            <h3 class="font-playfair">Natural Serenity</h3>
+            <p>Enjoy the soothing sounds of nature - the breeze through olive trees, cicadas in summer, and birds at dawn.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="section">
+        <div class="container">
+            <h2 class="section-title font-playfair fade-in-up">Modern Comforts, Traditional Charm</h2>
+            <p class="section-description fade-in-up stagger-1">
+                Every amenity you need for a perfect Greek getaway, thoughtfully provided in our beautiful villa.
+            </p>
+            
+            <div class="amenities-grid">
+                <div class="amenity-card hover-lift fade-in-up stagger-1">
+                    <div class="amenity-icon bg-aegean">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3 class="amenity-title font-playfair">Essential Comforts</h3>
+                    <ul class="amenity-list">
+                        <li><i class="fas fa-check"></i> Private bathroom</li>
+                        <li><i class="fas fa-check"></i> Air conditioning</li>
+                        <li><i class="fas fa-check"></i> Free Wi-Fi</li>
+                        <li><i class="fas fa-check"></i> Flat screen TV</li>
+                        <li><i class="fas fa-check"></i> Free parking</li>
+                    </ul>
+                </div>
+
+                <div class="amenity-card hover-lift fade-in-up stagger-2">
+                    <div class="amenity-icon bg-mediterranean">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="amenity-title font-playfair">Full Kitchen</h3>
+                    <ul class="amenity-list">
+                        <li><i class="fas fa-check"></i> Refrigerator & freezer</li>
+                        <li><i class="fas fa-check"></i> Oven & stovetop</li>
+                        <li><i class="fas fa-check"></i> Dishwasher</li>
+                        <li><i class="fas fa-check"></i> Coffee/tea maker</li>
+                        <li><i class="fas fa-check"></i> Dining table</li>
+                    </ul>
+                </div>
+
+                <div class="amenity-card hover-lift fade-in-up stagger-3">
+                    <div class="amenity-icon bg-terracotta">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3 class="amenity-title font-playfair">Outdoor Living</h3>
+                    <ul class="amenity-list">
+                        <li><i class="fas fa-check"></i> Sea view balcony</li>
+                        <li><i class="fas fa-check"></i> Mountain views</li>
+                        <li><i class="fas fa-check"></i> Outdoor dining area</li>
+                        <li><i class="fas fa-check"></i> Garden access</li>
+                        <li><i class="fas fa-check"></i> Private veranda</li>
+                    </ul>
+                </div>
+
+                <div class="amenity-card hover-lift fade-in-up stagger-4">
+                    <div class="amenity-icon bg-aegean">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <h3 class="amenity-title font-playfair">Entertainment</h3>
+                    <ul class="amenity-list">
+                        <li><i class="fas fa-check"></i> Smart TV</li>
+                        <li><i class="fas fa-check"></i> Streaming services</li>
+                        <li><i class="fas fa-check"></i> High-speed internet</li>
+                        <li><i class="fas fa-check"></i> USB charging ports</li>
+                        <li><i class="fas fa-check"></i> Bluetooth audio</li>
+                    </ul>
+                </div>
+
+                <div class="amenity-card hover-lift fade-in-up stagger-5">
+                    <div class="amenity-icon bg-mediterranean">
+                        <i class="fas fa-shower"></i>
+                    </div>
+                    <h3 class="amenity-title font-playfair">Private Bathroom</h3>
+                    <ul class="amenity-list">
+                        <li><i class="fas fa-check"></i> Shower</li>
+                        <li><i class="fas fa-check"></i> Hair dryer</li>
+                        <li><i class="fas fa-check"></i> Fresh towels</li>
+                        <li><i class="fas fa-check"></i> Toiletries</li>
+                        <li><i class="fas fa-check"></i> Hot water</li>
+                    </ul>
+                </div>
+
+                <div class="amenity-card hover-lift fade-in-up stagger-6">
+                    <div class="amenity-icon bg-terracotta">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3 class="amenity-title font-playfair">Extra Services</h3>
+                    <ul class="amenity-list">
+                        <li><i class="fas fa-check"></i> Washing machine</li>
+                        <li><i class="fas fa-check"></i> Iron & board</li>
+                        <li><i class="fas fa-check"></i> Bed linens</li>
+                        <li><i class="fas fa-check"></i> Local support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Gallery Section -->
+
+ <section id="gallery" class="section" style="background: #f8f9fa; padding: 40px 0;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+    <h2 class="section-title font-playfair" style="font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 10px;">
+      Villa Gallery
+    </h2>
+    <p class="section-description" style="text-align: center; margin-bottom: 30px; color: #555;">
+      Take a visual journey through our beautiful traditional villa and discover the authentic charm of Mani.
+    </p>
+
+    <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap: 15px;">
+
+ <div class="gallery-item" style="cursor:pointer;">
+  <a href="https://i.imgur.com/G5I5hJf.jpeg" target="_blank" rel="noopener">
+    <img src="https://i.imgur.com/G5I5hJf.jpeg" 
+         alt="Villa Vasiliki" loading="lazy" 
+         style="width: 100%; border-radius: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  </a>
+ </div>
+
+      
+    <div class="gallery-item" style="cursor:pointer;">
+    <a href="https://i.imgur.com/IyBbTcX.jpeg" target="_blank" rel="noopener">
+    <img src="https://i.imgur.com/IyBbTcX.jpeg" alt="Villa Vasiliki" loading="lazy"
+         style="width: 100%; border-radius: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    </a>
+    </div>
+      
+    <div class="gallery-item" style="cursor:pointer;">
+        <a href="https://i.imgur.com/P9u0Co2.jpeg" target="_blank" rel="noopener">
+        <img src="https://i.imgur.com/P9u0Co2.jpeg" alt="Villa Vasiliki" loading="lazy"
+         style="width: 100%; border-radius: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        </a>
+     </div>
+
+<div class="gallery-item" style="cursor:pointer;">
+  <a href="https://i.imgur.com/NCbFc4U.jpeg" target="_blank" rel="noopener">
+    <img src="https://i.imgur.com/NCbFc4U.jpeg" alt="Villa Vasiliki" loading="lazy"
+         style="width: 100%; border-radius: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  </a>
+</div>
+
+<div class="gallery-item" style="cursor:pointer;">
+  <a href="https://i.imgur.com/v5AO7AX.jpeg" target="_blank" rel="noopener">
+    <img src="https://i.imgur.com/v5AO7AX.jpeg" alt="Villa Vasiliki" loading="lazy"
+         style="width: 100%; border-radius: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  </a>
+</div>
+
+
+<div class="gallery-item" style="cursor:pointer;">
+  <a href="https://i.imgur.com/X0tRzqy.jpeg" target="_blank" rel="noopener">
+    <img src="https://i.imgur.com/X0tRzqy.jpeg" alt="Villa Vasiliki" loading="lazy"
+         style="width: 100%; border-radius: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  </a>
+</div>
+<div class="gallery-item" style="cursor:pointer;">
+  <a href="https://i.imgur.com/90BGSYf.jpeg" target="_blank" rel="noopener">
+    <img src="https://i.imgur.com/90BGSYf.jpeg" alt="Villa Vasiliki" loading="lazy"
+         style="width: 100%; border-radius: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  </a>
+</div>
+
+      
+<div class="gallery-item" style="cursor:pointer;">
+  <a href="https://i.imgur.com/w7v3Xbz.jpeg" target="_blank" rel="noopener">
+    <img src="https://i.imgur.com/w7v3Xbz.jpeg" alt="Villa Vasiliki" loading="lazy"
+         style="width: 100%; border-radius: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  </a>
+</div>
+
+            <!-- all photos -->
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <button id="openGalleryBtn" style="padding: 10px 20px; font-size: 1rem; cursor: pointer; border-radius: 5px; border: none; background-color: #007bff; color: white; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+          See All Photos
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  document.getElementById('openGalleryBtn').addEventListener('click', () => {
+    window.open('all-photos.html', '_blank');
+  });
+</script>
+
+<!-- Reviews Section -->
+<section id="reviews" class="section reviews" style="background-color: #4E7EA8; padding: 60px 0;">
+  <div class="container">
+    <h2 class="section-title font-playfair fade-in-up" style="color: white;">What Our Guests Say</h2>
+    <p class="section-description fade-in-up stagger-1" style="opacity: 0.9; color: white;">
+      Hear from travelers who have experienced the magic of Villa Vasiliki.
+    </p>
+    
+    <div class="reviews-grid" style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 40px;">
+      
+      <div class="review-card hover-lift fade-in-up stagger-1" style="background: #3a6aa9; padding: 20px; border-radius: 10px; flex: 1 1 300px; color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
+        <div class="review-stars" style="color: #ffd700; margin-bottom: 12px;">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p class="review-text" style="font-style: italic;">
+          "Excellent overall, a great place to stay. Comfortable, clean and with a roomy terrace with a fantastic view."
+        </p>
+        <div class="review-author" style="display: flex; align-items: center; margin-top: 15px;">
+          <div class="review-avatar" style="background: #2a5180; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; margin-right: 12px; font-size: 20px; color: white;">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="review-info">
+            <h4 style="margin: 0;">Georgie</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card hover-lift fade-in-up stagger-2" style="background: #3a6aa9; padding: 20px; border-radius: 10px; flex: 1 1 300px; color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
+        <div class="review-stars" style="color: #ffd700; margin-bottom: 12px;">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p class="review-text" style="font-style: italic;">
+          "Great place and the host eager to help with everything!"
+        </p>
+        <div class="review-author" style="display: flex; align-items: center; margin-top: 15px;">
+          <div class="review-avatar" style="background: #2a5180; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; margin-right: 12px; font-size: 20px; color: white;">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="review-info">
+            <h4 style="margin: 0;">Kimon</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card hover-lift fade-in-up stagger-3" style="background: #3a6aa9; padding: 20px; border-radius: 10px; flex: 1 1 300px; color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
+        <div class="review-stars" style="color: #ffd700; margin-bottom: 12px;">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p class="review-text" style="font-style: italic;">
+          "Amazing property! The view was stunning, Antonis was excellent and the location perfect. Fully stocked, clean, and very comfortable!"
+        </p>
+        <div class="review-author" style="display: flex; align-items: center; margin-top: 15px;">
+          <div class="review-avatar" style="background: #2a5180; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; margin-right: 12px; font-size: 20px; color: white;">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="review-info">
+            <h4 style="margin: 0;">Andreas</h4>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Contact Section -->
+<section id="contact" class="section bg-cream">
+    <div class="container">
+        <h2 class="section-title font-playfair fade-in-up">Plan Your Stay</h2>
+        <p class="section-description fade-in-up stagger-1">
+            Ready to experience the true essence of Mani? Get in touch to book your unforgettable Greek getaway.
+        </p>
+
+        <div class="contact-grid">
+            <div class="fade-in-up stagger-2">
+                <div class="contact-info">
+                    <h3 class="font-playfair" style="font-size: 1.5rem; margin-bottom: 2rem; color: #333;">Contact Information</h3>
+
+                    <a href="tel:+306949489188" class="contact-item">
+                        <div class="contact-icon bg-aegean">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 600; color: #333; margin-bottom: 0.25rem;">Phone</h4>
+                            <p style="color: var(--warm-gray);">(+30) 6949489188</p>
+                        </div>
+                    </a>
+
+                    <a href="mailto:angelos.papageorgiou1@gmail.com" class="contact-item">
+                        <div class="contact-icon bg-mediterranean">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 600; color: #333; margin-bottom: 0.25rem;">Email</h4>
+                            <p style="color: var(--warm-gray);">angelos.papageorgiou1@gmail.com</p>
+                        </div>
+                    </a>
+
+                    <div class="contact-item" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div class="contact-icon bg-olive">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 600; color: #333; margin-bottom: 0.25rem;">Location</h4>
+                            <p style="color: var(--warm-gray); margin: 0;">Mani Peninsula, Greece</p>
+                        </div>
+                        <a href="https://maps.app.goo.gl/kBUKfyA5cfHPwh199" target="_blank" rel="noopener noreferrer">
+                            <button style="padding: 0.25rem 0.5rem; font-size: 0.85rem; cursor: pointer;">View Map</button>
+                        </a>
+                    </div>
+
+                    <h3 class="font-playfair" style="font-size: 1.5rem; margin: 3rem 0 1.5rem; color: #333;">Book Direct</h3>
+                    <div class="booking-platforms">
+                        <a href="https://www.airbnb.gr/rooms/44377747" target="_blank" rel="noopener" class="platform-link platform-airbnb">
+                            <i class="fab fa-airbnb" style="color: #e53e3e;"></i>
+                            <span>Airbnb</span>
+                        </a>
+
+                        <a href="https://www.booking.com/hotel/gr/villa-vasiliki-areopole.html" target="_blank" rel="noopener" class="platform-link platform-booking">
+                            <i class="fas fa-bed" style="color: #2563eb;"></i>
+                            <span>Booking</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fade-in-up stagger-3">
+                <div class="contact-form">
+                    <div id="status" class="status-indicator" style="display: none;">
+                        <span id="statusText">Loading...</span>
+                    </div>
+                    
+                    <h3 class="font-playfair" style="font-size: 1.5rem; margin-bottom: 2rem; color: #333;">Send us a Message</h3>
+
+                    <div id="messageAlert" class="message-alert" style="display: none;"></div>
+
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name <span class="required">*</span></label>
+                                <input type="text" name="firstName" id="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name <span class="required">*</span></label>
+                                <input type="text" name="lastName" id="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email <span class="required">*</span></label>
+                            <input type="email" name="email" id="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" name="phone" id="phone" placeholder="Optional">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Check-in Date</label>
+                                <input type="date" name="checkIn" id="checkIn">
+                            </div>
+                            <div class="form-group">
+                                <label>Check-out Date</label>
+                                <input type="date" name="checkOut" id="checkOut">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Message <span class="required">*</span></label>
+                            <textarea name="message" id="messageText" placeholder="Tell us about your travel plans or any special requests..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary submit-btn" id="submitBtn" style="width: 100%; font-size: 1.1rem; padding: 1rem; position: relative;">
+                            <span class="btn-text">Send Message</span>
+                            <div class="loading-spinner" style="display: none;">
+                                <div class="spinner"></div>
+                            </div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3 class="font-playfair">Villa Vasiliki</h3>
+                <p>Experience authentic Greek hospitality in our traditional stone villa, perfectly located in the historic Mani peninsula with stunning sea views.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61578086127342&locale=el_GR" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/villa_vasiliki_mani_greece/" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home" onclick="scrollToSection('home')">Home</a></li>
+                    <li><a href="#about" onclick="scrollToSection('about')">About</a></li>
+                    <li><a href="#amenities" onclick="scrollToSection('amenities')">Amenities</a></li>
+                    <li><a href="#gallery" onclick="scrollToSection('gallery')">Gallery</a></li>
+                    <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul class="footer-links">
+                    <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                        <i class="fas fa-phone" style="margin-right: 0.75rem;"></i>
+                        (+30) 694 948 9188
+                    </li>
+                    <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                        <i class="fas fa-envelope" style="margin-right: 0.75rem;"></i>
+                        angelos.papageorgiou1@gmail.com
+                    </li>
+                    <li style="display: flex; align-items: center;">
+                        <i class="fas fa-map-marker-alt" style="margin-right: 0.75rem;"></i>
+                        Mani Peninsula, Greece
+                        <a href="https://maps.app.goo.gl/kBUKfyA5cfHPwh199" target="_blank" rel="noopener noreferrer" style="margin-left: 0.5rem;">
+                            <button style="padding: 0.25rem 0.5rem; font-size: 0.85rem; cursor: pointer;">View Map</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Villa Vasiliki. All rights reserved. | Experience authentic Greek hospitality in Mani.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating Contact Button -->
+<div class="floating-contact">
+    <a href="#contact" onclick="event.preventDefault(); document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">
+        <i class="fas fa-phone"></i>
+    </a>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-content">
+        <img id="lightboxImage" src="" alt="" class="lightbox-image">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-prev" onclick="previousImage()">&#8249;</button>
+        <button class="lightbox-next" onclick="nextImage()">&#8250;</button>
+    </div>
+</div>
+
+<script>
+    // Gallery images
+    const galleryImages = [
+        "https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+    ];
+
+    let currentImageIndex = 0;
+
+    // Loading overlay
+    window.addEventListener('load', function() {
+        setTimeout(() => {
+            document.getElementById('loadingOverlay').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('loadingOverlay').style.display = 'none';
+            }, 500);
+        }, 1000);
+    });
+
+    // Hero slideshow
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // Auto-advance slides
+    setInterval(nextSlide, 5000);
+
+    // Smooth scrolling
+    function scrollToSection(sectionId) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    // Mobile menu
+    function toggleMobileMenu() {
+        console.log('Mobile menu toggle');
+    }
+
+    // Lightbox functionality
+    function openLightbox(index) {
+        currentImageIndex = index;
+        document.getElementById('lightboxImage').src = galleryImages[index];
+        document.getElementById('lightbox').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(event) {
+        if (!event || event.target.id === 'lightbox' || event.target.classList.contains('lightbox-close')) {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+        document.getElementById('lightboxImage').src = galleryImages[currentImageIndex];
+    }
+
+    function previousImage() {
+        currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+        document.getElementById('lightboxImage').src = galleryImages[currentImageIndex];
+    }
+
+    // Keyboard navigation for lightbox
+    document.addEventListener('keydown', function(e) {
+        if (document.getElementById('lightbox').classList.contains('active')) {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') previousImage();
+            if (e.key === 'ArrowRight') nextImage();
+        }
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.remove('fade-in-up');
+                entry.target.style.animationPlayState = 'running';
+            }
+        });
+    }, observerOptions);
+
+    // Observe all fade-in-up elements
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+    });
+
+    // EmailJS Contact Form - WORKING VERSION
+    document.addEventListener('DOMContentLoaded', function() {
+        // EmailJS Configuration
+        const EMAILJS_CONFIG = {
+            publicKey: 'r8b3IoftnqvFsl8K3',
+            serviceId: 'service_s7zt5wq',
+            templateId: 'template_fyeepfs'
+        };
+
+        // Initialize EmailJS
+        try {
+            emailjs.init({
+                publicKey: EMAILJS_CONFIG.publicKey
+            });
+            console.log('EmailJS initialized successfully');
+        } catch (error) {
+            console.error('Failed to initialize EmailJS:', error);
+            showStatus('EmailJS initialization failed', 'error');
+            return;
+        }
+
+        // DOM Elements
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const loadingSpinner = submitBtn.querySelector('.loading-spinner');
+        const messageDiv = document.getElementById('messageAlert');
+        const statusDiv = document.getElementById('status');
+        const statusText = document.getElementById('statusText');
+        const checkInInput = document.getElementById('checkIn');
+        const checkOutInput = document.getElementById('checkOut');
+
+        // Utility Functions
+        function showStatus(text, type) {
+            statusDiv.style.display = 'block';
+            statusText.textContent = text;
+            statusDiv.className = `status-indicator status-${type}`;
+            console.log(`Status: ${text} (${type})`);
+        }
+
+        function showMessage(text, type) {
+            messageDiv.textContent = text;
+            messageDiv.className = `message-alert ${type}`;
+            messageDiv.style.display = 'block';
+            
+            // Auto-hide success messages after 8 seconds
+            if (type === 'success') {
+                setTimeout(() => {
+                    messageDiv.style.display = 'none';
+                }, 8000);
+            }
+            
+            console.log(`Message: ${text} (${type})`);
+        }
+
+        function hideMessage() {
+            messageDiv.style.display = 'none';
+        }
+
+        function setLoadingState(isLoading) {
+            submitBtn.disabled = isLoading;
+            if (isLoading) {
+                btnText.style.opacity = '0.3';
+                loadingSpinner.style.display = 'block';
+            } else {
+                btnText.style.opacity = '1';
+                loadingSpinner.style.display = 'none';
+            }
+        }
+
+        // Date handling functions
+        function formatDate(date) {
+            return date.toISOString().split('T')[0];
+        }
+
+        function setMinCheckIn() {
+            const today = new Date();
+            checkInInput.min = formatDate(today);
+
+            if (checkInInput.value && checkInInput.value < checkInInput.min) {
+                checkInInput.value = checkInInput.min;
+            }
+        }
+
+        function setMinCheckOut() {
+            if (checkInInput.value) {
+                const checkInDate = new Date(checkInInput.value);
+                const nextDay = new Date(checkInDate);
+                nextDay.setDate(nextDay.getDate() + 1);
+                checkOutInput.min = formatDate(nextDay);
+
+                if (checkOutInput.value && checkOutInput.value < checkOutInput.min) {
+                    checkOutInput.value = checkOutInput.min;
+                }
+            } else {
+                const today = new Date();
+                checkOutInput.min = formatDate(today);
+            }
+        }
+
+        function resetDateLimits() {
+            setMinCheckIn();
+            setMinCheckOut();
+        }
+
+        // Form validation
+        function validateForm(formData) {
+            const errors = [];
+            
+            // Check required fields
+            const requiredFields = [
+                { name: 'firstName', label: 'First Name' },
+                { name: 'lastName', label: 'Last Name' },
+                { name: 'email', label: 'Email' },
+                { name: 'message', label: 'Message' }
+            ];
+            
+            requiredFields.forEach(field => {
+                const value = formData.get(field.name);
+                if (!value || !value.trim()) {
+                    errors.push(`${field.label} is required`);
+                }
+            });
+            
+            // Validate email format
+            const email = formData.get('email');
+            if (email && !isValidEmail(email)) {
+                errors.push('Please enter a valid email address');
+            }
+            
+            // Validate dates
+            const checkIn = formData.get('checkIn');
+            const checkOut = formData.get('checkOut');
+            
+            if (checkIn && checkOut) {
+                const checkInDate = new Date(checkIn);
+                const checkOutDate = new Date(checkOut);
+                
+                if (checkOutDate <= checkInDate) {
+                    errors.push('Check-out date must be after check-in date');
+                }
+            }
+            
+            return errors;
+        }
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Email sending function
+        async function sendEmail(formData) {
+            const templateParams = {
+                firstName: formData.get('firstName').trim(),
+                lastName: formData.get('lastName').trim(),
+                email: formData.get('email').trim(),
+                phone: formData.get('phone')?.trim() || 'Not provided',
+                checkIn: formData.get('checkIn') || 'Not selected',
+                checkOut: formData.get('checkOut') || 'Not selected',
+                message: formData.get('message').trim(),
+                // Add timestamp for tracking
+                timestamp: new Date().toLocaleString('en-US', {
+                    timeZone: 'Europe/Athens',
+                    year: 'numeric',
+                    month: '2-digit',
+                    day: '2-digit',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                })
+            };
+
+            console.log('Sending email with params:', templateParams);
+
+            try {
+                const response = await emailjs.send(
+                    EMAILJS_CONFIG.serviceId,
+                    EMAILJS_CONFIG.templateId,
+                    templateParams
+                );
+                
+                console.log('Email sent successfully:', response);
+                
+                if (response.status === 200) {
+                    return { success: true, response };
+                } else {
+                    throw new Error(`EmailJS returned status: ${response.status}`);
+                }
+            } catch (error) {
+                console.error('Error sending email:', error);
+                throw error;
+            }
+        }
+
+        // Initialize form
+        function initializeForm() {
+            resetDateLimits();
+            showStatus('Ready to send messages', 'ready');
+            
+            // Set up date change listeners
+            checkInInput.addEventListener('change', setMinCheckOut);
+            
+            // Update minimum check-in date every minute
+            setInterval(setMinCheckIn, 60 * 1000);
+            
+            console.log('Contact form initialized successfully');
+        }
+
+        // Form submission handler
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            console.log('Form submission started');
+            
+            // Show loading state
+            setLoadingState(true);
+            showStatus('Sending message...', 'loading');
+            hideMessage();
+
+            try {
+                // Get form data
+                const formData = new FormData(form);
+                
+                // Validate form
+                const validationErrors = validateForm(formData);
+                if (validationErrors.length > 0) {
+                    throw new Error(validationErrors.join(', '));
+                }
+
+                // Send email
+                const result = await sendEmail(formData);
+                
+                if (result.success) {
+                    // Success
+                    showStatus('Message sent successfully!', 'success');
+                    showMessage('Thank you for your message! We will get back to you soon.', 'success');
+                    
+                    // Reset form
+                    form.reset();
+                    resetDateLimits();
+                    
+                    console.log('Form submitted successfully');
+                } else {
+                    throw new Error('Failed to send message');
+                }
+
+            } catch (error) {
+                console.error('Form submission error:', error);
+                
+                // Error handling
+                showStatus('Failed to send message', 'error');
+                
+                let errorMessage = 'Sorry, there was an error sending your message. ';
+                
+                if (error.message.includes('required') || error.message.includes('valid email') || error.message.includes('date')) {
+                    errorMessage += error.message;
+                } else if (error.message.includes('network') || error.message.includes('fetch')) {
+                    errorMessage += 'Please check your internet connection and try again.';
+                } else if (error.message.includes('EmailJS')) {
+                    errorMessage += 'Email service is temporarily unavailable. Please try again later or contact us directly.';
+                } else {
+                    errorMessage += 'Please try again later or contact us directly at angelos.papageorgiou1@gmail.com';
+                }
+                
+                showMessage(errorMessage, 'error');
+            } finally {
+                // Reset loading state
+                setLoadingState(false);
+            }
+        });
+
+        // Initialize the application
+        try {
+            initializeForm();
+        } catch (error) {
+            console.error('Failed to initialize form:', error);
+            showStatus('Initialization failed', 'error');
+            showMessage('Contact form is temporarily unavailable. Please contact us directly.', 'error');
+        }
+    });
+</script>
+
+</body>
+</html>
